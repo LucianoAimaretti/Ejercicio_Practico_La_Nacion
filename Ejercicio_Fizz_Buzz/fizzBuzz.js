@@ -16,3 +16,7 @@ function isDivisible(list) {
     }
     return stringList;
 }
+
+module.exports = {
+    isDivisible,
+};

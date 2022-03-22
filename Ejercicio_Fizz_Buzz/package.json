@@ -1,0 +1,15 @@
+{
+    "name": "segundo_ejercicio_practico",
+    "version": "1.0.0",
+    "description": "",
+    "main": "ejercicio_practico.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.2",
+        "jest": "^27.5.1"
+    }
+}
