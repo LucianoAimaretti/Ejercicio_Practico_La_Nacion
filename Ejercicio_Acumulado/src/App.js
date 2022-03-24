@@ -1,8 +1,7 @@
 import React from "react";
 import "./sass/app.scss";
 
-import Navbar from "./components/Navbar";
-import { Grid, Footer } from "./components/index";
+import { Navbar, Grid, Footer } from "./components/index";
 
 function App() {
     const [count, setCount] = React.useState(0);
