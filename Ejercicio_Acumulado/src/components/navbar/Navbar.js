@@ -1,5 +1,5 @@
-import logo from "../logo.svg";
-import "./components.scss";
+import logo from "../../logo.svg";
+import "./navbar.scss";
 
 export default function Navbar() {
     return (
@@ -14,7 +14,7 @@ export default function Navbar() {
                 <input type="text" id="busqueda" className="navbar__left__buscar" placeholder="Buscar "></input>
             </div>
             <div>
-                <a href="/">
+                <a href="https://www.lanacion.com.ar/">
                     <img src={logo} className="navbar__logo" alt="logo" />
                 </a>
             </div>

@@ -1,0 +1,18 @@
+@import "../../sass/media-queries";
+@import "../../sass/variables";
+
+.footer {
+    margin-bottom: 1.25em;
+    padding: 30px;
+    &__ftrLine {
+        border-bottom: 1px solid $border-color;
+        text-align: center;
+    }
+
+    &__logo {
+        height: 22px;
+    }
+}
+
+@include desktop-nav-footer {
+}

@@ -1,3 +1,3 @@
-export { Navbar } from "./Navbar";
+export { Navbar } from "./navbar/Navbar";
 export { Grid } from "./Grid";
-export { Footer } from "./Footer";
+export { Footer } from "./footer/Footer";

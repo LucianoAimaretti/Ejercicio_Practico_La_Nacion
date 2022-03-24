@@ -1,5 +1,5 @@
-@import "../sass/media-queries";
-@import "../sass/variables";
+@import "../../sass/media-queries";
+@import "../../sass/variables";
 
 .navbar {
     padding: 15px 30px 10px;
@@ -46,7 +46,7 @@
                 border: 1px solid $border-color;
                 border-radius: 3px;
                 position: relative;
-                background: url() no-repeat right;
+                /* background: url() no-repeat right; */
                 background-size: 26px;
             }
         }
