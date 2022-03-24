@@ -1,0 +1,31 @@
+@import "./variables";
+
+@mixin mobile {
+    @media screen and (min-width: $mobile-size) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-size) {
+        @content;
+    }
+}
+
+@mixin mobile-nav-footer {
+    @media screen and (min-width: $mobile-nav-footer-size) {
+        @content;
+    }
+}
+
+@mixin desktop-nav-footer {
+    @media screen and (min-width: $desktop-nav-footer-size) {
+        @content;
+    }
+}
