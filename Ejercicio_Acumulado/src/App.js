@@ -1,5 +1,8 @@
 import React from "react";
-import "./App.css";
+import "./sass/app.scss";
+
+import Navbar from "./components/Navbar";
+import { Grid, Footer } from "./components/index";
 
 function App() {
     const [count, setCount] = React.useState(0);
@@ -14,9 +17,14 @@ function App() {
 
     return (
         <>
-            <p>{count}</p>
-            <button onClick={increment}>Increment</button>
-            <button onClick={decrement}>Decrement</button>
+            {/* Navbar Section */}
+            <Navbar />
+
+            {/* Grid Section */}
+            <Grid />
+
+            {/* Footer Section */}
+            <Footer />
         </>
     );
 }
