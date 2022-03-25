@@ -1,8 +1,23 @@
-import "./grid.scss";
+import React, { useEffect, useState } from "react";
 import Card from "../article/Card";
-import React from "react";
+import "./grid.scss";
+
+const GenerateTags = (data) => {};
 
 export default function Grid({ data }) {
+    const [visible, setVisible] = useState(9);
+    const [button, setButton] = useState("");
+
+    const showMoreArticles = () => {
+        setVisible((prevValue) => prevValue + 15);
+    };
+
+    useEffect(() => {
+        if (visible > 27) {
+            setButton("__invisible");
+        }
+    }, [visible]);
+
     return (
         <section className="grid">
             <div className="grid__containaer__title">
@@ -11,7 +26,7 @@ export default function Grid({ data }) {
             {/* Agregar tags */}
             {/* Cards Section */}
             <section className="grid__card">
-                {data.map((article, index) => {
+                {data.slice(0, visible).map((article, index) => {
                     if (article.subtype === "7") {
                         return (
                             <Card
@@ -23,11 +38,13 @@ export default function Grid({ data }) {
                             />
                         );
                     }
-                    {
-                        /*  */
-                    }
                 })}
             </section>
+            <div className={`grid__more${button}`}>
+                <button className="grid__more__btn" onClick={showMoreArticles}>
+                    MÁS NOTAS DE ACUMULADO GRILLA
+                </button>
+            </div>
         </section>
     );
 }

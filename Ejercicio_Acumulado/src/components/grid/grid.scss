@@ -32,6 +32,23 @@
         align-items: center;
         gap: 16px;
     }
+    &__more {
+        width: 100%;
+        text-align: center;
+        &__btn {
+            text-transform: uppercase;
+            padding: 9.47px 18px;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+            font-weight: bold;
+            color: $color-etiqueta;
+            border-color: $color-etiqueta;
+            background-color: transparent;
+        }
+        &__invisible {
+            display: none;
+        }
+    }
 }
 @include tablet {
     .grid {
@@ -45,6 +62,8 @@
         &__card {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1.875em;
+            grid-row-gap: 1.875em;
         }
     }
 }
@@ -53,12 +72,9 @@
     .grid {
         align-items: start;
         height: 180%;
-        display: grid;
         &__card {
             min-height: 318.44px;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-column-gap: 2.5em;
-            grid-row-gap: 2.5em;
         }
     }
 }
