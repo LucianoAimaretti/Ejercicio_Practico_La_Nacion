@@ -52,14 +52,14 @@
         font-family: $font-header;
         font-style: normal;
         font-weight: normal;
-        font-size: $font-size-header-mobile;
-        line-height: $line-height-header-mobile;
+        font-size: $font-size-header-tablet;
+        line-height: $line-height-header-tablet;
     }
 
     .date {
         font-family: Arial;
         font-style: normal;
-        font-size: 18px;
+        font-size: 14px;
         line-height: 16px;
         color: #5a5a5a;
         padding-left: 16px;
@@ -71,10 +71,10 @@
         .header {
             letter-spacing: 0.4px;
         }
-        .title {
+        /* .title {
             font-size: $font-size-header-tablet;
             line-height: $line-height-header-tablet;
-        }
+        } */
         .header,
         .date {
             font-size: 14px;
