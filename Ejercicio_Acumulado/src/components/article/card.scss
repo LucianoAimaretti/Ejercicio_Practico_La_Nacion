@@ -32,7 +32,6 @@
 
     .image {
         display: flex;
-        border: 1px solid #cccccc;
         box-sizing: border-box;
         width: 100%;
         &_style {
@@ -53,8 +52,8 @@
         font-family: $font-header;
         font-style: normal;
         font-weight: normal;
-        font-size: $font-size-header;
-        line-height: $line-height-header;
+        font-size: $font-size-header-mobile;
+        line-height: $line-height-header-mobile;
     }
 
     .date {
@@ -72,8 +71,13 @@
         .header {
             letter-spacing: 0.4px;
         }
+        .title {
+            font-size: $font-size-header-tablet;
+            line-height: $line-height-header-tablet;
+        }
         .header,
         .date {
+            font-size: 14px;
             padding: 0;
         }
 
@@ -84,8 +88,9 @@
 }
 @include desktop {
     .article_container {
-        .image {
-            height: 480px;
-        }
+        /* .title {
+            font-size: $font-size-header-mobile;
+            line-height: $line-height-header-mobile;
+        } */
     }
 }

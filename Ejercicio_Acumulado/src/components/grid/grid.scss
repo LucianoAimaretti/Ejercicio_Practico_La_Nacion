@@ -1,18 +1,32 @@
 @import "../../sass/media-queries";
 @import "../../sass/variables";
 
+@font-face {
+    font-family: "Sueca Slab";
+    src: url(../../sass/fonts/SuecaSlab-Bold-webfont.woff2);
+}
+@font-face {
+    font-family: "Sueca Slab";
+    src: url(../../sass/fonts/SuecaSlab-Medium-webfont.woff2);
+}
+
 .grid {
     &__container__title {
         padding: 20px 20px 30px;
     }
 
     &__title {
+        font-family: $font-header;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
         margin: 15px;
         display: inline-block;
         border-bottom: 2px solid black;
     }
 
     &__card {
+        margin-top: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -37,13 +51,14 @@
 
 @include desktop {
     .grid {
-        padding: 100px 500px 60px;
         align-items: start;
         height: 180%;
         display: grid;
         &__card {
             min-height: 318.44px;
             grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 2.5em;
+            grid-row-gap: 2.5em;
         }
     }
 }
