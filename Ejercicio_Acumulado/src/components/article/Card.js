@@ -25,7 +25,7 @@ export function Card({ image, title, subtitle, date }) {
                 </a>
                 {/* Date Section */}
                 <a href="/" className="date">
-                    <h4 className="date_styles">{newDate}</h4>
+                    {newDate}
                 </a>
             </article>
         </>
