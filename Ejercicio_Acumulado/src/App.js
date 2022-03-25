@@ -3,28 +3,18 @@ import "./sass/app.scss";
 
 import { Navbar, Grid, Footer } from "./components/index";
 
-function App() {
-    const [count, setCount] = React.useState(0);
-
-    const increment = () => {
-        setCount(count + 1);
-    };
-
-    const decrement = () => {
-        setCount(count - 1);
-    };
-
+function App(data) {
     return (
-        <>
+        <main className="container">
             {/* Navbar Section */}
             <Navbar />
 
             {/* Grid Section */}
-            <Grid />
+            <Grid data={data} />
 
             {/* Footer Section */}
             <Footer />
-        </>
+        </main>
     );
 }
 
