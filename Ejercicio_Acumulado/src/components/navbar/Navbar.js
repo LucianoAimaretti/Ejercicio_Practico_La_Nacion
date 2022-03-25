@@ -3,11 +3,8 @@ import "./navbar.scss";
 
 export default function Navbar() {
     return (
-        <section className="navbar">
+        <nav className="navbar">
             <div className="navbar__left">
-                <span />
-                <span />
-                <span />
                 <a className="navbar__left__menu" href="/">
                     Menú
                 </a>
@@ -29,7 +26,7 @@ export default function Navbar() {
                     Ingresar
                 </button>
             </div>
-        </section>
+        </nav>
     );
 }
 
