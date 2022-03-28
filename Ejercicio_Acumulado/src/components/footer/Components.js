@@ -10,7 +10,7 @@ import gda from "../../assets/gda.svg";
 
 import "./footer.scss";
 
-export function Row_mobile() {
+const Mobile = () => {
     return (
         <>
             <section className="row_1">
@@ -58,9 +58,9 @@ export function Row_mobile() {
             </section>
         </>
     );
-}
+};
 
-export function Row_desktop() {
+const Desktop = () => {
     return (
         <>
             <section className="row_1">
@@ -126,6 +126,6 @@ export function Row_desktop() {
             </section>
         </>
     );
-}
+};
 
-export default { Row_mobile, Row_desktop };
+export { Mobile, Desktop };

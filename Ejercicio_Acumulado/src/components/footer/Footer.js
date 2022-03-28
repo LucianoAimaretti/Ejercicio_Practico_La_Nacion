@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { Row_mobile, Row_desktop } from "./Components";
+import { Mobile, Desktop } from "./Components";
 
 export default function Footer() {
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+    const windowMatch = window.matchMedia("(max-width: 1023px)");
 
     useEffect(() => {
         // set initial value
@@ -20,9 +21,9 @@ export default function Footer() {
         return function cleanup() {
             mediaWatcher.removeEventListener("change", updateIsNarrowScreen);
         };
-    }, [window.matchMedia("(max-width: 1023px)")]);
+    }, [windowMatch]);
 
-    return <footer className="footer">{isNarrowScreen ? <Row_mobile /> : <Row_desktop />}</footer>;
+    return <footer className="footer">{isNarrowScreen ? <Mobile /> : <Desktop />}</footer>;
 }
 
 export { Footer };
