@@ -71,10 +71,7 @@
         .header {
             letter-spacing: 0.4px;
         }
-        /* .title {
-            font-size: $font-size-header-tablet;
-            line-height: $line-height-header-tablet;
-        } */
+
         .header,
         .date {
             font-size: 14px;
@@ -84,13 +81,5 @@
         .image {
             height: 240px;
         }
-    }
-}
-@include desktop {
-    .article_container {
-        /* .title {
-            font-size: $font-size-header-mobile;
-            line-height: $line-height-header-mobile;
-        } */
     }
 }
