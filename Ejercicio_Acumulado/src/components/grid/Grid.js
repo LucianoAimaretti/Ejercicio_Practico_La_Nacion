@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Card from "../article/Card";
 import "./grid.scss";
 
-const GenerateTags = (data) => {};
-
 export default function Grid({ data }) {
     const [visible, setVisible] = useState(9);
     const [button, setButton] = useState("");
@@ -18,34 +16,60 @@ export default function Grid({ data }) {
         }
     }, [visible]);
 
+    const [tags, setTags] = useState([]);
+
+    const generateTags = (data) => {
+        let tag = [];
+        data.map((article) => {
+            if (article.taxonomy.tags[0]) {
+                tag.push(article.taxonomy.tags[0].text);
+            }
+        });
+        setTags(tag);
+    };
+
+    useEffect(() => {
+        generateTags(data);
+    }, []);
+
     return (
-        <section className="grid">
-            <div className="grid__containaer__title">
-                <h1 className="grid__title">Aumulado Grilla</h1>
-            </div>
-            {/* Agregar tags */}
-            {/* Cards Section */}
-            <section className="grid__card">
-                {data.slice(0, visible).map((article, index) => {
-                    if (article.subtype === "7") {
-                        return (
-                            <Card
-                                key={index}
-                                image={article.promo_items.basic.url}
-                                title={article.headlines.basic}
-                                subtitle={article.promo_items.basic.subtitle}
-                                date={article.display_date}
-                            />
-                        );
-                    }
-                })}
+        <>
+            <section className="grid">
+                <div className="title_container">
+                    <h1 className="title_container__header">Acumulado Grilla</h1>
+                    <div className="title_container__tags">
+                        {tags.slice(0, 10).map((tag, index) => {
+                            return (
+                                <a key={index} href="/">
+                                    {tag}
+                                </a>
+                            );
+                        })}
+                    </div>
+                </div>
+                {/* Cards Section */}
+                <article className="card">
+                    {data.slice(0, visible).map((article, index) => {
+                        if (article.subtype === "7") {
+                            return (
+                                <Card
+                                    key={index}
+                                    image={article.promo_items.basic.url}
+                                    title={article.headlines.basic}
+                                    subtitle={article.promo_items.basic.subtitle}
+                                    date={article.display_date}
+                                />
+                            );
+                        }
+                    })}
+                </article>
+                <div className={`more${button}`}>
+                    <button className="more__btn" onClick={showMoreArticles}>
+                        MÁS NOTAS DE ACUMULADO GRILLA
+                    </button>
+                </div>
             </section>
-            <div className={`grid__more${button}`}>
-                <button className="grid__more__btn" onClick={showMoreArticles}>
-                    MÁS NOTAS DE ACUMULADO GRILLA
-                </button>
-            </div>
-        </section>
+        </>
     );
 }
 
