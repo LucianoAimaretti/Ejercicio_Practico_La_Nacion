@@ -5,10 +5,7 @@ import logo from "../../logo.svg";
 
 import "./navbar.scss";
 
-export function Nav_Mobile() {
-    const [menu, setMenu] = useState(true);
-
-    const handleClick = () => setMenu(!menu);
+const Mobile = () => {
     return (
         <>
             <div className="container">
@@ -25,9 +22,9 @@ export function Nav_Mobile() {
             </div>
         </>
     );
-}
+};
 
-export function Nav_Desktop() {
+const Desktop = () => {
     const [menu, setMenu] = useState(true);
 
     const handleClick = () => setMenu(!menu);
@@ -35,10 +32,10 @@ export function Nav_Desktop() {
         <>
             <div className="container">
                 <div className="left_container">
-                    <a className="left_container__menu" onClick={handleClick}>
+                    <ul className="left_container__menu" onClick={handleClick}>
                         {menu ? <FaBars size="25" className="icon" /> : <FaTimes size="25" className="icon" />}
                         {menu ? "Menú" : "Cerrar"}
-                    </a>
+                    </ul>
                     <input type="text" id="busqueda" className="left_container__buscar" placeholder="Buscar "></input>
                 </div>
                 <div>
@@ -57,6 +54,6 @@ export function Nav_Desktop() {
             </div>
         </>
     );
-}
+};
 
-export default { Nav_Mobile, Nav_Desktop };
+export { Mobile, Desktop };

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-import { Nav_Mobile, Nav_Desktop } from "./Component";
+import { Mobile, Desktop } from "./Component";
 
 export default function Navbar() {
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+    const windowMatch = window.matchMedia("(max-width: 1023px)");
 
     useEffect(() => {
         // set initial value
@@ -20,9 +21,9 @@ export default function Navbar() {
         return function cleanup() {
             mediaWatcher.removeEventListener("change", updateIsNarrowScreen);
         };
-    }, [window.matchMedia("(max-width: 1023px)")]);
+    }, [windowMatch]);
 
-    return <nav className="navbar">{isNarrowScreen ? <Nav_Mobile /> : <Nav_Desktop />}</nav>;
+    return <nav className="navbar">{isNarrowScreen ? <Mobile /> : <Desktop />}</nav>;
 }
 
 export { Navbar };
