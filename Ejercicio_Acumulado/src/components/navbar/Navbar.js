@@ -1,33 +1,28 @@
-import logo from "../../logo.svg";
-import "./navbar.scss";
+import { useState, useEffect } from "react";
+
+import { Nav_Mobile, Nav_Desktop } from "./Component";
 
 export default function Navbar() {
-    return (
-        <nav className="navbar">
-            <div className="navbar__left">
-                <a className="navbar__left__menu" href="/">
-                    Menú
-                </a>
-                <input type="text" id="busqueda" className="navbar__left__buscar" placeholder="Buscar "></input>
-            </div>
-            <div>
-                <a href="https://www.lanacion.com.ar/">
-                    <img src={logo} className="navbar__logo" alt="logo" />
-                </a>
-            </div>
-            <div className="navbar__right">
-                <a className="navbar__right__sub" href="/">
-                    suscribite
-                </a>
-                <button className="navbar__right__btnSub" href="/">
-                    suscribite
-                </button>
-                <button className="navbar__right__btnLog" href="/">
-                    Ingresar
-                </button>
-            </div>
-        </nav>
-    );
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+
+    useEffect(() => {
+        // set initial value
+        const mediaWatcher = window.matchMedia("(max-width: 1023px)");
+        setIsNarrowScreen(mediaWatcher.matches);
+
+        //watch for updates
+        function updateIsNarrowScreen(e) {
+            setIsNarrowScreen(e.matches);
+        }
+        mediaWatcher.addEventListener("change", updateIsNarrowScreen);
+
+        // clean up after ourselves
+        return function cleanup() {
+            mediaWatcher.removeEventListener("change", updateIsNarrowScreen);
+        };
+    }, [window.matchMedia("(max-width: 1023px)")]);
+
+    return <nav className="navbar">{isNarrowScreen ? <Nav_Mobile /> : <Nav_Desktop />}</nav>;
 }
 
 export { Navbar };
