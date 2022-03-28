@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://api-test-ln.herokuapp.com/articles";
+const url = process.env.REACT_APP_URL_LA_NACION;
 
 export async function getData() {
     try {
