@@ -1,4 +1,4 @@
-# Ejercicio_Practico_La_Nacion
+# Ejercicio Practico La Nacion
 
 ### En este repositorio encontraran dos carpetas cada una corresponde a uno de los ejercicios solicitados.
 
