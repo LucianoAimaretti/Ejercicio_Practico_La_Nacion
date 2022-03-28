@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
+import { getData } from "./services";
+import { Navbar, Grid, Footer } from "./components";
+
 import "./sass/app.scss";
 
-import { Navbar, Grid, Footer } from "./components/index";
-
 function App() {
-    const url = "https://api-test-ln.herokuapp.com/articles";
     const [data, setData] = useState();
 
-    const fetchApi = async () => {
-        const response = await fetch(url);
+    useEffect(async () => {
+        async function loadData() {
+            const response = await getData();
+            if (response.status === 200) {
+                setData(response.data.articles);
+            }
+        }
+        loadData();
+    }, []);
 
-        const responseJSON = await response.json();
-        setData(responseJSON);
-    };
-
-    useEffect(() => fetchApi(), []);
-
-    return (
+    return data ? (
         <main>
             {/* Navbar Section */}
             <Navbar />
-            {}
             {/* Grid Section */}
-            <Grid data={data.articles} />
+            <Grid data={data} />
 
             {/* Footer Section */}
             <Footer />
         </main>
-    );
+    ) : null;
 }
 
 export default App;
