@@ -38,7 +38,7 @@
 -   Test unitarios o implementar TDD.
 -   Usar docker o bien implementar el código resultante en alguno Paas gratuito como heroku o now.sh, etc.
 
-### App
+# App
 
 ## App funcional: [Link App](https://la-nacion-ejercicio-practico.vercel.app/)
 
@@ -65,3 +65,7 @@ En caso de querer la app en express, se deben seguir los siguientes pasos:
 -   Luego configuramos una variable de entorno llamada `REACT_APP_URL_LA_NACION` con el endpoint brindado
 
 -   Ejecutamos `npm run build` y por ultimo `npm run ssr`.
+
+## Test Unitarios
+
+Para realizar dichos test, una vez dentro de la carpeta contenedora ejecutamos `npm test`
