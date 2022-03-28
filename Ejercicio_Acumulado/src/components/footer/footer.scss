@@ -2,17 +2,105 @@
 @import "../../sass/variables";
 
 .footer {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
     margin-bottom: 1.25em;
-    padding: 30px;
-    &__ftrLine {
-        border-bottom: 1px solid $border-color;
-        text-align: center;
-    }
+    padding: 30px 30px 20px;
 
-    &__logo {
-        height: 22px;
-    }
+    display: block;
+    text-align: center;
+}
+.logo {
+    height: 22px;
 }
 
+.row_1,
+.row_2__mobile {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.row_1 {
+    border-bottom: 1px solid $border-color;
+}
+
+.row_2__mobile {
+    .col_1 {
+        margin-bottom: 20px;
+
+        a ~ a {
+            padding-left: 3em;
+        }
+    }
+    .col_2,
+    .col_3,
+    .col_4 {
+        a ~ a {
+            padding-left: 2em;
+        }
+
+        margin-bottom: 20px;
+    }
+}
 @include desktop-nav-footer {
+    .row_1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .col_1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            grid-column-gap: 3em;
+        }
+        .col_3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            grid-column-gap: 2em;
+        }
+    }
+    .logo {
+        height: 22px;
+    }
+    .row_2,
+    .row_3 {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .row_2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .col_1 {
+            display: flex;
+            justify-content: space-between;
+            grid-column-gap: 21px;
+            color: $color-etiqueta;
+        }
+        .col_2 {
+            color: #5a5a5a;
+            .captcha {
+                display: flex;
+
+                justify-content: space-between;
+                grid-column-gap: 2px;
+                color: $color-etiqueta;
+            }
+        }
+    }
+
+    .row_3 {
+        display: flex;
+        justify-content: space-between;
+
+        color: #5a5a5a;
+        .col_2 {
+            display: grid;
+            grid-auto-flow: column;
+            grid-column-gap: 15px;
+        }
+    }
 }
