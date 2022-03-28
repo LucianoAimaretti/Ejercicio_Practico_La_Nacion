@@ -2,8 +2,8 @@ import "./card.scss";
 
 const transformDate = (date) => {
     const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    let current_datetime = new Date();
-    let formatted_date = current_datetime.getDate() + " de " + months[current_datetime.getMonth()] + " de " + current_datetime.getFullYear();
+    let datetime = new Date(date);
+    let formatted_date = datetime.getDate() + " de " + months[datetime.getMonth()] + " de " + datetime.getFullYear();
     return formatted_date;
 };
 
