@@ -40,6 +40,12 @@ Luego tenemos un ciclo **_for_** el cual ejecutara un codigo hasta recorrer todo
 
 Continuando con el codigo primero tomamos el primer valor del array y comprobamos si su resto dividido 3 y 5 da 0, en el caso verdadero se psuhea el string **_FizzBuzz_** en el array `stringList`, en caso contrario volvemos a utilizar el operador condicional, para definir otra condicion, evaluando esta vez si el resto dividido 3 da 0 o si el numero 3 esta incluido en este, dando uso de la funcion ya mencionada `includeNumber`, en caso verdadero, pushea el string **_Fizz_**, caso contrario, definimos nuevamente una condicion, en este caso si el resto dividido 5 da 0 o si dicho numero se encuentra dentro de el e pusheamos **_Buzz_**, en caso contrario no se pushea nada
 
+## Test
+
+En caso de querer realizar los test se debe ejecutar el siguiente comando:
+
+`npm run test`
+
 # Algunas preguntas:
 
 -   ¿De qué forma guardarías los archivos que un usuario suba por la aplicación al servidor y porque?
