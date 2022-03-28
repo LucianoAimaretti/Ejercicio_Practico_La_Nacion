@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Primer Ejercicio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Assets
 
-## Available Scripts
+> [Maqueta](http://especiales.lanacion.com.ar/arc-css/acumulado.asp)
 
-In the project directory, you can run:
+> Endpoint: `https://api-test-ln.herokuapp.com/articles [get method available]`
 
-### `npm start`
+## Objetivos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   A partir del tag main de html, componentizar todos los elementos que considere necesario.
+-   El endpoint provisto contiene un json con lo que representan 30 notas o artículos. con estos datos se deben alcanzar los siguientes objetivos:
+    -   Agrupar, totalizar y ordenar de mayor a menor los tags encontrados en las notas ▪ los tags serán encontrados en cada artículo dentro del atributo “taxonomy.tags”.
+    -   Del ordenamiento anterior mostrar los primeros 10 tags debajo del título.
+-   El resultado de este item debe ser similar al siguiente resultado para ser mostrado en la lista:
+    `[ { "slug":"huevo-tid47236", "text":"Huevo", "count":13 }, { "slug":"leche-tid47244", "text":"Leche", "count":9 }, { "slug":"arroz-tid47136", "text":"Arroz", "count":7 }, { "slug":"manteca-tid47257", "text":"Manteca", "count":7 }, { "slug":"azucar-tid47141", "text":"Azúcar", "count":7 }, { "slug":"harina-0000-tid48184", "text":"Harina 0000", "count":5 }, { "slug":"ajo-tid47126", "text":"Ajo", "count":4 }, { "slug":"pescados-tid67216", "text":"Pescados", "count":4 }, { "slug":"frutas-tid67217", "text":"Frutas", "count":4 }, { "slug":"semillas-de-sesamo-tid47338", "text":"Semillas de sésamo", "count":3 } ] `
+    -   El href a contener debe ser: “/tema/[tag.slug]”.
+    -   Mostrar los 30 artículos en la grilla de artículos.
+        -   Listar sólo artículos con el `"subtype":"7"`.
+        -   La fecha a mostrar debe ser la de display_date.
+        -   El formato de la fecha debe salir como sale en la maqueta.
+        -   El título a mostrar se encuentra en en el atributo `headline.basic`.
+        -   tomar de imagen para el artículo la que sale en el `promo_items.url`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Se espera observar:
 
-### `npm test`
+-   Una web app hecha en React from Scratch o bien usar Next.js
+-   Debe cumplir con Server Side Rendering.
+-   Repositorio con el código en GitHub.
+-   Implementar Hooks.
+-   Usar solo React y/o Redux si lo considera necesario para manejo de estados entre componentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Será un plus si agrega:
 
-### `npm run build`
+-   Uso de programación declarativa.
+-   Para manejo de estado entre componentes, se valorará Context API de React . Implementar una API Client patterns para consultas del Endpoint.
+-   Implementar Async/Await para la consulta de los datos remotos.
+-   Test unitarios o implementar TDD.
+-   Usar docker o bien implementar el código resultante en alguno Paas gratuito como heroku o now.sh, etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## App funcional: [Link App](https://la-nacion-ejercicio-practico.vercel.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## App Local
 
-### `npm run eject`
+En caso de querer la app en local, se deben seguir los siguientes pasos:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   Abrir la ventana de comandos y ejecutar `git clone https://github.com/LucianoAimaretti/Ejercicio_Practico_Frontend_Ssr.git`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Ingresamos en la carpeta contenedora y ejecutamos `npm i`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   Luego configuramos una variable de entorno llamada `REACT_APP_URL_LA_NACION` con el endpoint brindado.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   Por utimo ejecutamos `npm start`.
 
-## Learn More
+## App Server - Express
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+En caso de querer la app en express, se deben seguir los siguientes pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Abrir la ventana de comandos y ejecutar `git clone https://github.com/LucianoAimaretti/Ejercicio_Practico_Frontend_Ssr.git`
 
-### Code Splitting
+-   Ingresamos en la carpeta contenedora y ejecutamos `npm i`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   Luego configuramos una variable de entorno llamada `REACT_APP_URL_LA_NACION` con el endpoint brindado
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Ejecutamos `npm run build` y por ultimo `npm run ssr`.
